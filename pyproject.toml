@@ -1,0 +1,36 @@
+[project]
+name = "lark-mcp-server"
+version = "0.1.0"
+description = "飞书 MCP Server — 通过 lark-cli 操作飞书消息、联系人、日历等"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+keywords = ["lark", "feishu", "mcp", "model-context-protocol", "飞书"]
+
+authors = [
+    { name = "Agent Garden", email = "hello@agent-garden.pages.dev" },
+]
+
+dependencies = [
+    "fastmcp>=3.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/agent-garden/lark-mcp-server"
+Source = "https://github.com/agent-garden/lark-mcp-server"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+lark-mcp-server = "lark_mcp_server.server:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+]
